@@ -1,51 +1,92 @@
-<p align="center"><img width="128px" height="112px" src="./assets/vue-i18n-logo.png" alt="Vue I18n logo"></p>
-<h1 align="center">vue-i18n</h1>
-<p align="center">
-  <a href="https://circleci.com/gh/kazupon/vue-i18n/tree/dev"><img src="https://circleci.com/gh/kazupon/vue-i18n/tree/dev.svg?style=shield" alt="Build Status"></a>
-  <a href="https://codecov.io/gh/kazupon/vue-i18n"><img src="https://codecov.io/gh/kazupon/vue-i18n/branch/dev/graph/badge.svg" alt="Coverage Status"></a>
-  <a href="http://badge.fury.io/js/vue-i18n"><img src="https://badge.fury.io/js/vue-i18n.svg" alt="NPM version"></a>
-  <a href="https://discord.gg/4yCnk2m"><img src="https://img.shields.io/badge/Discord-join%20chat-738bd7.svg" alt="vue-i18n channel on Discord"></a>
-  <a href="https://devtoken.rocks/package/vue-i18n"><img src="https://badge.devtoken.rocks/vue-i18n" alt="vue-i18n Dev Token"></a>
-</p>
 
-<p align="center">Internationalization plugin for Vue.js</p>
+# collaborators wanted
+I have barely no time work on improve this project, needs collaborators for project maintenance.
 
-<h3 align="center">Sliver Sponsors</h3>
+## React Image Cropper
 
-<p align="center">
-  <a href="https://www.codeandweb.com/babeledit?utm_campaign=vue-i18n-2019-01" target="_blank">
-    <img src="https://raw.githubusercontent.com/kazupon/vue-i18n/dev/vuepress/.vuepress/public/patrons/babeledit.png">
-  </a>
-</p>
+[![Downloads](https://img.shields.io/npm/dt/react-image-cropper.svg)](https://www.npmjs.com/package/react-image-cropper)
+[![Version](https://img.shields.io/npm/v/react-image-cropper.svg)](https://www.npmjs.com/package/react-image-cropper)
 
-<p align="center">
-  <a href="https://www.patreon.com/kazupon" target="_blank">
-    <img src="https://c5.patreon.com/external/logo/become_a_patron_button.png" alt="Become a Patreon">
-  </a>
-</p>
+A React.JS Image Cropper
+Touch supported
 
-<br/>
+**[See the demo](http://braavos.me/react-image-cropper/)**
 
-## :book: Documentation
+Custom:
 
-See [here](http://kazupon.github.io/vue-i18n/)
++ initial cropper frame position 
++ frame width, height, ratio
++ crop event
+
+### Hot to Use
+
++ `import {Cropper} from 'react-image-cropper'`
+
++ styles are all inline
+
++ define Cropper with src, and ref to execute crop method  
+
+```
+<Cropper 
+    src="http://braavos.me/images/posts/college-rock/the-smiths.png" 
+    ref={ ref => { this.cropper = ref }}
+/>
+```
+
++ crop and get image url
+
+`image.src = this.cropper.crop()`
+
++ get crop values:
+
+`const values = this.cropper.values()`
+
+values: 
+
+```
+{
+    // display values
+    display: {
+        width, // frame width
+        height, // frame height
+        x, // original x position
+        y, // original y position
+        imgWidth, // img width
+        imgHeight, // img height
+    },
+    // original values
+    original: {
+        width, // frame width
+        height, // frame height
+        x, // original x position
+        y, // original y position
+        imgWidth, // img width
+        imgHeight, // img height
+    }
+}
+```
 
 
-## :scroll: Changelog
++ onChange for preview
 
-Detailed changes for each release are documented in the [CHANGELOG.md](https://github.com/kazupon/vue-i18n/blob/dev/CHANGELOG.md).
+(values) => onChange(values)
+
++ custom use
+
+| prop  |  value   |
+|:-------:|:--------|
+| ratio | width / height |
+| width | cropper frame width |
+| height | cropper frame height |
+| originX | cropper original position(x axis), accroding to image left|
+| originY | cropper original position(Y axis), accroding to image top|
+| fixedRatio | turn on/off fixed ratio (bool default true) |
+| allowNewSelection | allow user to create a new selection instead of reusing initial selection (bool default true) |
+| styles | specify styles to override inline styles |
+| onImgLoad | specify fuction callback to run when the image completed loading |
+| beforeImgload | specify function callback to run when the image size value is ready but image is not completed loading |
+| onChange | triggred when dragging stop, get values of cropper |
 
 
-## :exclamation: Issues
+**[See the demo](http://braavos.me/react-image-cropper/)**
 
-Please make sure to read the [Issue Reporting Checklist](https://github.com/kazupon/vue-i18n/blob/dev/CONTRIBUTING.md#issue-reporting-guidelines) before opening an issue. Issues not conforming to the guidelines may be closed immediately.
-
-
-## :muscle: Contribution
-
-Please make sure to read the [Contributing Guide](https://github.com/kazupon/vue-i18n/blob/dev/CONTRIBUTING.md) before making a pull request.
-
-
-## :copyright: License
-
-[MIT](http://opensource.org/licenses/MIT)
