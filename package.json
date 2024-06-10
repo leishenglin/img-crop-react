@@ -1,6 +1,6 @@
 {
-  "name": "img-crop-react",
-  "version": "1.0.0",
+  "name": "lsl-img-crop-react",
+  "version": "1.1.0",
   "description": "",
   "main": "app.js",
   "scripts": {
